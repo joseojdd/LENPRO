@@ -1,45 +1,31 @@
-g
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi Programa</title>
+  <title>Mi Programa Web</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
     }
-    .container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    a.button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-    }
-    a.button:hover {
-      background-color: #45a049;
+    #app {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bienvenido a mi programa</h1>
-    <p>Haz clic en el botón de abajo para descargar o ver el programa.</p>
-    <!-- Cambia el enlace a tu archivo o a tu aplicación -->
-    <a href="mi_programa.zip" class="button" download>Descargar Programa</a>
+  <div id="app">
+    <h1>Cargando programa...</h1>
   </div>
+
+  <!-- Aquí enlazas tu archivo JS (por ejemplo main.js) -->
+  <script src="main.js"></script>
 </body>
 </html>
