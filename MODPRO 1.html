@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Proyectos</title>
+    <link rel="stylesheet" href="MODPRO 2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li>📊 Dashboard</li>
+            <li>📁 Proyectos</li>
+            <li>✅ Tareas</li>
+            <li>📈 KPIs</li>
+            <li>⚙️ Configuración</li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <header>
+            <h1>Gestión de Proyectos</h1>
+            <button id="addProject">Nuevo Proyecto</button>
+            <button id="logout">Cerrar Sesión</button>
+        </header>
+
+        <!-- Tabla de Proyectos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Proyecto</th>
+                    <th>Fecha Límite</th>
+                    <th>Prioridad</th>
+                    <th>Responsable</th>
+                    <th>Estado</th>
+                    <th>Comentarios</th>
+                </tr>
+            </thead>
+            <tbody id="projectTableBody">
+            </tbody>
+        </table>
+
+        <!-- Sección de Estadísticas -->
+        <div class="stats-section">
+            <h2>Progreso de Tareas</h2>
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Modal para Nuevo Proyecto -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Nuevo Proyecto</h2>
+            <input type="text" id="projectName" placeholder="Nombre del Proyecto">
+            <input type="date" id="projectDeadline">
+            <select id="projectPriority">
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+            <input type="text" id="projectResponsible" placeholder="Responsable">
+            <select id="projectStatus">
+                <option value="Pendiente">Pendiente</option>
+                <option value="En progreso">En progreso</option>
+                <option value="Completada">Completada</option>
+            </select>
+            <textarea id="projectComments" placeholder="Comentarios"></textarea>
+            <button id="saveProject">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal para Recuperación de Contraseña -->
+    <div id="passwordRecoveryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRecoveryModal">&times;</span>
+            <h2>Recuperar Contraseña</h2>
+            <input type="email" id="recoveryEmail" placeholder="Ingrese su correo">
+            <button id="recoverPassword">Enviar</button>
+            <p id="recoveryMessage" style="display:none; color: green;">Se ha enviado un enlace de recuperación.</p>
+        </div>
+    </div>
+
+    <script src="MODPRO 3.js"></script>
+</body>
+</html>
