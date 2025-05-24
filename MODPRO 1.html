@@ -8,6 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <script>
+        // Redirigir si no hay usuario en sesión
+        if (!localStorage.getItem("currentUser")) {
+            window.location.href = "MODPRO 4.html";
+        }
+    </script>
+
     <!-- Contenido Principal -->
     <div class="main-content">
         <header>
@@ -74,6 +81,11 @@
             <p id="recoveryMessage" style="display:none; color: green;">Se ha enviado un enlace de recuperación.</p>
         </div>
     </div>
+
+    <script src="MODPRO 3.js"></script>
+</body>
+</html>
+
 
     <script src="MODPRO 3.js"></script>
 </body>
