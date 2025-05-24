@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
+    position: relative;
 }
 
 /* Sidebar - Oculto por defecto */
@@ -29,6 +30,8 @@ body {
     margin-left: 20px;
     padding: 20px;
     width: calc(100% - 40px);
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
@@ -172,4 +175,78 @@ td[data-priority="Media"] {
     cursor: pointer;
 }
 
+/* --- Login Page Styles from MODPRO 4.html --- */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main-content {
+    height: 100vh;
+}
+.center-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transform: translateX(15%);
+    position: relative;
+    z-index: 1;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-container button:hover {
+    background: #0056b3;
+}
 
+/* Header buttons container for MODPRO 1.html */
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Trash can icon for delete button */
+.delete-project {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: filter 0.2s;
+    vertical-align: middle;
+}
+.delete-project:hover {
+    filter: brightness(0.7) drop-shadow(0 0 2px #ff0000);
+}
+/* Remove border for the cell containing the trash bin icon */
+td:last-child {
+    border: none !important;
+    background: transparent;
+}
