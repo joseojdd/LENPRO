@@ -8,62 +8,30 @@
 </head>
 <body>
     <div class="main-content">
-        <header>
-            <h1>Bienvenido</h1>
-        </header>
-        <div class="login-container">
-            <h2>Iniciar Sesión</h2>
-            <input type="text" id="username" placeholder="Usuario">
-            <input type="password" id="password" placeholder="Contraseña">
-            <button id="loginButton">Ingresar</button>
+        <div class="center-wrapper">
+            <header class="header">
+                <h1>Bienvenido</h1>
+            </header>
+            <div class="login-container">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="username" placeholder="Usuario">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button id="loginButton">Ingresar</button>
+            </div>
         </div>
     </div>
 
     <script>
         document.getElementById("loginButton").addEventListener("click", () => {
-    // Obtener la última página visitada desde localStorage
-    let lastPage = localStorage.getItem("lastPage");
-
-    // Si existe una página guardada, redirigir a esa, si no, ir al inicio del sistema
-    window.location.href = lastPage ? lastPage : "MODPRO 1.html";
-});
+            const username = document.getElementById("username").value;
+            localStorage.setItem("currentUser", username);
+            // Obtener la última página visitada desde localStorage
+            let lastPage = localStorage.getItem("lastPage");
+            // Si existe una página guardada, redirigir a esa, si no, ir al inicio del sistema
+            window.location.href = lastPage ? lastPage : "MODPRO 1.html";
+        });
     </script>
 
-    <style>
-        .login-container {
-            width: 300px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .login-container input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .login-container button:hover {
-            background: #0056b3;
-
-        }
-       
-    </style>
     <p><a href="#" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a></p>
     <p><a href="#" id="recoverUserLink">¿Olvidaste tu usuario?</a></p>    
 
@@ -89,45 +57,7 @@
     </div>
 </div>
 
+<script src="MODPRO 3.js"></script>
 </body>
-<script>
-    // Modal de contraseña
-    document.getElementById("forgotPasswordLink").addEventListener("click", () => {
-        document.getElementById("recoverPasswordModal").style.display = "flex";
-    });
-
-    document.getElementById("closeRecoverPassword").addEventListener("click", () => {
-        document.getElementById("recoverPasswordModal").style.display = "none";
-    });
-
-    document.getElementById("sendPasswordRecovery").addEventListener("click", () => {
-        const email = document.getElementById("passwordRecoveryEmail").value;
-        if (email.includes("@")) {
-            document.getElementById("passwordRecoveryMessage").style.display = "block";
-            console.log("Se enviaría un enlace de recuperación a:", email);
-        } else {
-            alert("Por favor, ingrese un correo válido.");
-        }
-    });
-
-    // Modal de usuario
-    document.getElementById("recoverUserLink").addEventListener("click", () => {
-        document.getElementById("recoverUserModal").style.display = "flex";
-    });
-
-    document.getElementById("closeRecoverUser").addEventListener("click", () => {
-        document.getElementById("recoverUserModal").style.display = "none";
-    });
-
-    document.getElementById("sendUserRecovery").addEventListener("click", () => {
-        const email = document.getElementById("userRecoveryEmail").value;
-        if (email.includes("@")) {
-            document.getElementById("userRecoveryMessage").style.display = "block";
-            console.log("Se enviaría el usuario a:", email);
-        } else {
-            alert("Por favor, ingrese un correo válido.");
-        }
-    });
-</script>
 
 </html>
